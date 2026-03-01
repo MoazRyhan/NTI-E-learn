@@ -16,22 +16,22 @@ export const successResponse = ( data , message ="success" )=>{
 
 export const createResponse = ( data , message ="created success" )=>{
 
-    return{
-        statusCode: HTTP_STATUS.CREATE ,
-        success : true ,
-        message,
-        data
-    }
+  return {
+    statusCode: HTTP_STATUS.CREATED,
+    success: true,
+    message,
+    data,
+  };
 
 }
 
 export const notfoundResponse = ( data , message ="Delete  success" )=>{
 
-    return{
-        statusCode: HTTP_STATUS.NOT_FOUND ,
-        success : true ,
-        message,
-        data
-    }
+  return {
+    statusCode: HTTP_STATUS.NO_CONTENT,
+    success: true,
+    message,
+    data: null,
+  };
 
 }

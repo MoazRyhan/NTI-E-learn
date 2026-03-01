@@ -61,6 +61,11 @@ const userSchema = new mongoose.Schema(
      {timestamps :true}
  )
 
+     // Virtual for full name
+    userSchema.virtual('fullName').get(function () {
+      return `${this.firstName}${this.lastName}`;
+    });
+
  const User = mongoose.model.User || mongoose.model( "User" , userSchema  )
 
  export default User 
