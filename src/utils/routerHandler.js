@@ -1,4 +1,5 @@
 import authRouter from "../modules/auth/auth.routes.js"
+import userRouter from "../modules/users/user.routes.js"
 
 
 
@@ -6,7 +7,7 @@ const routerHandler = async ( app , express ) => {
 
     app.use( express.json() )
     app.use("/auth" , authRouter )
-    // app.use( "/user" , userRouter  )
+    app.use( "/users" , userRouter  )
 
 
     app.use( "/{*any}"  , ( req , res ) =>{
