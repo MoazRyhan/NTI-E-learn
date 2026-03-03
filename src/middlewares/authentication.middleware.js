@@ -9,6 +9,8 @@ export const authentication = asyncHandler( async (  req , res , next ) =>{
 
     if (!token) {
         token = req.cookies?.accessToken
+        
+        
     }
 
     if (!token) {

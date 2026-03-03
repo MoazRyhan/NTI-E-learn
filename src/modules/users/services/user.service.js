@@ -1,7 +1,7 @@
 import User from "../../../DB/models/user.model.js"
 import { createNotFoundError, createUnauthorizedError } from "../../../utils/APIErrors.js"
 import { comparePassword, hashPassword } from "../../../utils/password.utils.js"
-import { uploadToCloudinary } from "../../../utils/upload.utils.js"
+import { deleteFromCloudinary, uploadToCloudinary } from "../../../utils/upload.utils.js"
 
 
 
@@ -76,12 +76,17 @@ export const uploadAvatar = async ( userId  , file ) => {
         throw createNotFoundError("user not found")
     }
 
+    if (user.avatar && user.avatar.PublicId ) {
+        await deleteFromCloudinary( user.avatar.PublicId )
+    }
+
+
 
     const result = await uploadToCloudinary( file , "e-learning/image"  ) 
-
+    
     user.avatar = {
         url : result.url ,
-        publicId : result.publicId
+        PublicId : result.publicId
 
     }
 

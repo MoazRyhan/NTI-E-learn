@@ -21,3 +21,13 @@ export const uploadToCloudinary = async (file, folder = 'e-learning') => {
     throw createBadRequestError('Failed to upload file');
   }
 };
+
+
+export const deleteFromCloudinary = async (publicId) => {
+  try {
+    await cloudinary.uploader.destroy(publicId);
+    return true;
+  } catch (error) {
+    return false;
+  }
+};

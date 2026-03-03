@@ -6,6 +6,13 @@ import routerHandler from "./utils/routerHandler.js"
 import { verifyEmailTransporter } from "./utils/email.utils.js"
 import { notFound } from "./middlewares/notFound.middleware.js"
 import { errorHandler } from "./middlewares/errorHandler.middleware.js"
+import helmet from "helmet";
+import cors from 'cors';
+import cookieParser from 'cookie-parser';
+import mongoSanitize from 'express-mongo-sanitize';
+import xss from 'xss-clean';
+import { config } from "./config/env.js"
+import { apiLimit } from "./middlewares/ratelimit.middleware.js"
 
 dotenv.config()
 
@@ -17,7 +24,21 @@ const bootstrap = () => {
 
     // ======================== SEC 🔐
 
+    app.use( helmet(   )  )
+    app.use( cors( {
+        origin : [config.FRONTEND_URL , "*" ] ,
+        credentials : true
+    } ) )
     
+    // app.use( mongoSanitize() )
+    
+    // app.use(xss() )
+
+    app.use( apiLimit )
+
+
+    app.use( cookieParser() )
+
     // test prod
     
     //DB

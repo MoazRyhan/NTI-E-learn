@@ -15,26 +15,28 @@ userRouter.post( "/change-password" , authentication  , UserController.changePas
 userRouter.put('/profile/avatar',authentication 
    ,  uploadSingle("image")  ,UserController.uploadAvatar );
 
+   
 
-
-export default userRouter;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   
 // Admin only routes
 userRouter.get('/admin/all', authentication , authorization('admin'), UserController.getAllUsers);
+
+
+export default userRouter;   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

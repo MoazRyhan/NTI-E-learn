@@ -57,7 +57,7 @@ export const config = {
   // Rate Limiting
   RATE_LIMIT: {
     WINDOW_MS: parseInt(process.env.RATE_LIMIT_WINDOW_MS) || 900000,
-    MAX_REQUESTS: parseInt(process.env.RATE_LIMIT_MAX_REQUESTS) || 100,
+    MAX_REQUESTS: parseInt(process.env.RATE_LIMIT_MAX_REQUESTS) || 2,
   },
 
   // Frontend

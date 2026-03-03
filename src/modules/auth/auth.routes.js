@@ -1,11 +1,14 @@
 import express from "express"
 import * as AuthController from "./auth.controller.js"
+import * as authValidation from "./validation/auth.validation.js"
+import { ValidationRequest } from './../../middlewares/validation.middleware.js';
+import { authlimit } from "../../middlewares/ratelimit.middleware.js";
 const authRouter = express.Router()
 
 
-authRouter.post( "/register"  , AuthController.register )
+authRouter.post( "/register"  , authlimit , ValidationRequest(authValidation.registerValidation)  , AuthController.register )
 
-authRouter.post( "/login"  , AuthController.login )
+authRouter.post( "/login"  , authlimit , AuthController.login )
 
 authRouter.post( "/refresh-token"  , AuthController.refreshToken )
 
