@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ."
+    "build": "npm i" ,
+    "dev": "nodemon .",
+    "prod": "node ."
+  },
+   "engines": {
+    "node": "v25.2.1"
   },
   "keywords": [],
   "author": "",
