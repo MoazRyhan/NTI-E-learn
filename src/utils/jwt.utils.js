@@ -1,7 +1,7 @@
 
 import jwt from "jsonwebtoken"
 import { config } from "../config/env.js"
-import { createUnauthorizedError } from "./APIErrors.js"
+import { createUnauthorizedError } from "./apierrors.js"
 
 export const generateAccessToken = ( payload ) => {
 

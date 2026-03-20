@@ -1,7 +1,7 @@
 import multer from "multer";
 import path from "path";
-import { config } from "../Config/env.js";
-import { createBadRequestError } from "../utils/APIErrors.js";
+import { config } from "../config/env.js";
+import { createBadRequestError } from "../utils/apierrors.js";
 
 
 const storage = multer.diskStorage({

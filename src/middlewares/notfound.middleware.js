@@ -1,4 +1,4 @@
-import { createNotFoundError } from "../utils/APIErrors.js";
+import { createNotFoundError } from "../utils/apierrors.js";
 
 export const notFound = (req, res, next) => {
   const error = createNotFoundError(`Route${req.originalUrl} not found`);

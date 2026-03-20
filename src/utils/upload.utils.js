@@ -1,6 +1,6 @@
 
 import cloudinary from './../config/cloudinary.js';
-import { createBadRequestError } from './APIErrors.js';
+import { createBadRequestError } from './apierrors.js';
 
 
 export const uploadToCloudinary = async (file, folder = 'e-learning') => {

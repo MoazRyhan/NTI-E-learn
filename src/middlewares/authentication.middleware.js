@@ -1,5 +1,5 @@
-import { createUnauthorizedError } from "../utils/APIErrors.js";
-import { asyncHandler } from "../utils/asyncHandler.js";
+import { createUnauthorizedError } from "../utils/apierrors.js";
+import { asyncHandler } from "../utils/asynchandler.js";
 import { verifyToken } from "../utils/jwt.utils.js";
 
 

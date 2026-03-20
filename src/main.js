@@ -1,11 +1,11 @@
 import express from "express"
 import dotenv from "dotenv"
-import DateBase from "./DB/connection.js"
-import User from "./DB/models/user.model.js"
-import routerHandler from "./utils/routerHandler.js"
+import DateBase from "./db/connection.js"
+import User from "./db/models/user.model.js"
+import routerHandler from "./utils/routerhandler.js"
 import { verifyEmailTransporter } from "./utils/email.utils.js"
-import { notFound } from "./middlewares/notFound.middleware.js"
-import { errorHandler } from "./middlewares/errorHandler.middleware.js"
+import { notFound } from "./middlewares/notfound.middleware.js"
+import { errorHandler } from "./middlewares/errorhandler.middleware.js"
 import helmet from "helmet";
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
@@ -40,6 +40,13 @@ const bootstrap = () => {
     app.use( cookieParser() )
 
     // test prod
+    app.get('/health', (req, res) => {
+    res.json({
+    success: true,
+    message: 'API is running',
+    timestamp: new Date().toISOString(),
+      });
+    });
     
     //DB
     DateBase()

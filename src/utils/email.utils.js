@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer';
 import { config } from "../config/env.js"
-import { createInternalError } from "./APIErrors.js"
+import { createInternalError } from "./apierrors.js"
 
 let transporter = null;
 

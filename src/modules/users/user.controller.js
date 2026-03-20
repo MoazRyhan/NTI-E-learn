@@ -1,6 +1,6 @@
 import * as UserService from './services/user.service.js';
-import { successResponse } from '../../utils/APIResponse.js';
-import { asyncHandler } from '../../utils/asyncHandler.js';
+import { successResponse } from '../../utils/apiresponse.js';
+import { asyncHandler } from '../../utils/asynchandler.js';
 
 export const getProfile = asyncHandler(async (req, res) => {
   const user = await UserService.getProfile(req.user.userId);

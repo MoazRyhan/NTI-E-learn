@@ -1,5 +1,5 @@
-import User from "../../../DB/models/user.model.js"
-import { createNotFoundError, createUnauthorizedError } from "../../../utils/APIErrors.js"
+import User from "../../../db/models/user.model.js"
+import { createNotFoundError, createUnauthorizedError } from "../../../utils/apierrors.js"
 import { comparePassword, hashPassword } from "../../../utils/password.utils.js"
 import { deleteFromCloudinary, uploadToCloudinary } from "../../../utils/upload.utils.js"
 

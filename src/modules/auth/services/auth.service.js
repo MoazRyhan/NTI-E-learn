@@ -1,5 +1,5 @@
-import User from "../../../DB/models/user.model.js"
-import { createConflictError, createNotFoundError, createUnauthorizedError } from "../../../utils/APIErrors.js"
+import User from "../../../db/models/user.model.js"
+import { createConflictError, createNotFoundError, createUnauthorizedError } from "../../../utils/apierrors.js"
 import { sendPasswordResetEmail, sendWelcomeEmail } from "../../../utils/email.utils.js"
 import { encrypt } from "../../../utils/encrypt.js"
 import { decodeToken, generateAccessToken, generateRefreshToken, generateResetToken, verifyToken } from "../../../utils/jwt.utils.js"

@@ -1,5 +1,5 @@
-import { createForbiddenError } from "../utils/APIErrors.js"
-import { asyncHandler } from "../utils/asyncHandler.js"
+import { createForbiddenError } from "../utils/apierrors.js"
+import { asyncHandler } from "../utils/asynchandler.js"
 
 
 

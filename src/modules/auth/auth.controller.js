@@ -1,6 +1,6 @@
 import * as AuthService from "./services/auth.service.js"
-import { asyncHandler } from './../../utils/asyncHandler.js';
-import { createResponse, successResponse } from "../../utils/APIResponse.js";
+import { asyncHandler } from './../../utils/asynchandler.js';
+import { createResponse, successResponse } from "../../utils/apiresponse.js";
 
 
 export const register = asyncHandler( async ( req , res ) =>{

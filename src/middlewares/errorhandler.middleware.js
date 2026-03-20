@@ -1,6 +1,6 @@
 
 import { HTTP_STATUS } from "../config/constants.js"
-import { config } from "../Config/env.js"
+import { config } from "../config/env.js"
 
 
 
