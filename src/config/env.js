@@ -11,6 +11,7 @@ export const config = {
 
   // Database
   MONGODB_URI: process.env.MONGODB_URI,
+  DB_MONGO_ATLAS : process.env.DB_MONGO_ATLAS ,
 
   // JWT
   JWT: {

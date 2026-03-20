@@ -7,7 +7,8 @@ const DateBase = async (  ) =>{
     try {
 
         const connection = await mongoose.connect(
-            `${ config.MONGODB_URI }`
+            // `${ config.MONGODB_URI }`
+            `${ config.DB_MONGO_ATLAS  }`
         )
 
 
